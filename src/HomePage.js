@@ -1,23 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Counter from "./images/counter.png";
 
-const HomePage = () => {
+const HomePage = ({ navigation }) => {
+  const filteredNavigation = navigation.filter((item) => item.name !== "Home");
+
+  console.log(filteredNavigation);
+
   return (
     <div className="container">
-      <div className="my-4 row">
-        <div className="col-md-3">
-          <Link to="/use-state" className="text-decoration-none">
-            <div className="card border-dark">
-              <div className="card-header border-dark bg-dark text-white">
-                useState(Counter)
+      <div className="row">
+        {filteredNavigation.map((item) => (
+          <div key={item.name} className="col-md-6 mb-4">
+            <Link to={item.href} className="text-decoration-none">
+              <div className="card border-dark">
+                <div className="card-header border-dark bg-dark text-white">
+                  {item.name}
+                </div>
               </div>
-              <div className="card-body">
-                <img src={Counter} alt="" />
-              </div>
-            </div>
-          </Link>
-        </div>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );

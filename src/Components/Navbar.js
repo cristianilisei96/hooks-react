@@ -1,19 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "useState(Counter)", href: "/use-state" },
-];
-
-const Navbar = () => {
+const Navbar = ({ navigation }) => {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark bg-dark"
       style={{ marginBottom: "20px" }}
     >
       <div className="container">
-        <span className="navbar-brand">React-Hooks</span>
+        <NavLink to="/" className="navbar-brand">
+          React-Hooks
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"

@@ -13,18 +13,20 @@ const Counter = () => {
   };
 
   return (
-    <>
-      <div className="mt-5 text-center">
-        <h4>useState(Counter)</h4>
-        <Button variant="dark" onClick={decrease}>
-          decrease
-        </Button>
-        <span className="mx-4 fw-bold fs-4">{counter}</span>
-        <Button variant="dark" onClick={increase}>
-          increase
-        </Button>
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12 text-center">
+          <h4>useState(Counter)</h4>
+          <Button variant="dark" onClick={decrease}>
+            decrease
+          </Button>
+          <span className="mx-4 fw-bold fs-4">{counter}</span>
+          <Button variant="dark" onClick={increase}>
+            increase
+          </Button>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
