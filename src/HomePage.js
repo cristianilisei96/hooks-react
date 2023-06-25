@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 const HomePage = ({ navigation }) => {
   const filteredNavigation = navigation.filter((item) => item.name !== "Home");
 
-  console.log(filteredNavigation);
-
   return (
     <div className="container">
       <div className="row">
